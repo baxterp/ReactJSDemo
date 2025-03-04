@@ -1,0 +1,27 @@
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination-dark .page-link {
+  background-color: #343a40;
+  color: #fff;
+  border: 1px solid #454d55;
+}
+
+.pagination-dark .page-link:hover {
+  background-color: #495057;
+  color: #fff;
+}
+
+.pagination-dark .page-item.active .page-link {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.pagination-dark .page-item.disabled .page-link {
+  background-color: #343a40;
+  color: #6c757d;
+  border-color: #454d55;
+}

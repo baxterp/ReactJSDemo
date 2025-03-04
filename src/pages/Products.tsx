@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Col, Row, Table } from 'react-bootstrap';
+import { Container, Col, Row, Table, Pagination } from 'react-bootstrap';
+import './Products.css'; // Import the CSS file for custom styles
 
 const Products: React.FC = () => {
   const [products, setProducts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
 
   useEffect(() => {
     fetch('/api')
@@ -10,6 +13,15 @@ const Products: React.FC = () => {
       .then(data => setProducts(data))
       .catch(error => console.error('Error fetching products:', error));
   }, []);
+
+  const handlePageChange = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+  };
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = products.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(products.length / itemsPerPage);
 
   return (
     <Container>
@@ -30,7 +42,7 @@ const Products: React.FC = () => {
               </tr>
             </thead>
             <tbody>
-              {products.map((product: any) => (
+              {currentItems.map((product: any) => (
                 <tr key={product.productID}>
                   <td>{product.productID}</td>
                   <td>{product.productName}</td>
@@ -38,6 +50,19 @@ const Products: React.FC = () => {
               ))}
             </tbody>
           </Table>
+          <div className="pagination-container">
+            <Pagination className="pagination-dark">
+              <Pagination.First onClick={() => handlePageChange(1)} disabled={currentPage === 1} />
+              <Pagination.Prev onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1} />
+              {[...Array(totalPages)].map((_, index) => (
+                <Pagination.Item key={index + 1} active={index + 1 === currentPage} onClick={() => handlePageChange(index + 1)}>
+                  {index + 1}
+                </Pagination.Item>
+              ))}
+              <Pagination.Next onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages} />
+              <Pagination.Last onClick={() => handlePageChange(totalPages)} disabled={currentPage === totalPages} />
+            </Pagination>
+          </div>
         </Col>
       </Row>
     </Container>
