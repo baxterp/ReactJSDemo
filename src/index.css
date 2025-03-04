@@ -1,0 +1,92 @@
+/* Dark mode styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.dropdown-item:active {
+  background-color: #0d6efd;
+}
+
+/* Add some spacing to the icons in the navbar */
+.nav-link svg, .navbar-brand svg {
+  margin-right: 5px;
+}
+
+/* Custom styling for cards */
+.card {
+  transition: transform 0.3s ease;
+  height: 100%;
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border-color: #333;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Dark mode form controls */
+.form-control {
+  background-color: #2d2d2d;
+  border-color: #444;
+  color: #e0e0e0;
+}
+
+.form-control:focus {
+  background-color: #2d2d2d;
+  color: #e0e0e0;
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.form-text {
+  color: #aaa !important;
+}
+
+/* Dark mode buttons */
+.btn-outline-primary {
+  color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.btn-outline-primary:hover {
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+/* Dark mode dropdown */
+.dropdown-menu {
+  background-color: #2d2d2d;
+  border-color: #444;
+}
+
+.dropdown-item {
+  color: #e0e0e0;
+}
+
+.dropdown-item:hover {
+  background-color: #3d3d3d;
+  color: #fff;
+}
+
+.dropdown-divider {
+  border-top-color: #444;
+}
+
+/* Dark mode jumbotron */
+.bg-light {
+  background-color: #1e1e1e !important;
+}
