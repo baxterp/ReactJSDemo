@@ -22,7 +22,7 @@ const Products: React.FC = () => {
       </Row>
       <Row>
         <Col>
-          <Table striped bordered hover>
+          <Table striped bordered hover className="table-dark">
             <thead>
               <tr>
                 <th>ID</th>
@@ -31,8 +31,8 @@ const Products: React.FC = () => {
             </thead>
             <tbody>
               {products.map((product: any) => (
-                <tr key={product.id}>
-                  <td>{product.productNameID}</td>
+                <tr key={product.productID}>
+                  <td>{product.productID}</td>
                   <td>{product.productName}</td>
                 </tr>
               ))}
