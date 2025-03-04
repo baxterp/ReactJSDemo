@@ -14,17 +14,8 @@ const Navigation: React.FC = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             
-            <NavDropdown title="Account" id="account-dropdown" className="me-3">
-              <NavDropdown.Item href="#profile">Profile</NavDropdown.Item>
-              <NavDropdown.Item href="#settings">Settings</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#logout">Logout</NavDropdown.Item>
-            </NavDropdown>
-            
-            <NavDropdown title="Shop" id="shop-dropdown" className="me-3">
-              <NavDropdown.Item href="#products">Products</NavDropdown.Item>
-              <NavDropdown.Item href="#categories">Categories</NavDropdown.Item>
-              <NavDropdown.Item href="#deals">Special Deals</NavDropdown.Item>
+            <NavDropdown title="Data Demo" id="shop-dropdown" className="me-3">
+              <NavDropdown.Item href="/products">Products</NavDropdown.Item>
             </NavDropdown>
             
             <NavDropdown title="Help" id="help-dropdown">
