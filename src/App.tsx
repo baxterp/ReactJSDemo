@@ -12,7 +12,6 @@ function App() {
         <Routes>
           <Route path="/" element={<MainContent />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/api" />
         </Routes>
       </main>
       <Footer />

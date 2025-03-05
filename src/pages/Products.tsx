@@ -10,7 +10,12 @@ const Products: React.FC = () => {
   useEffect(() => {
     fetch('/api')
       .then(response => response.json())
-      .then(data => setProducts(data))
+      .then(data => 
+        {
+          console.log('Products Data:');
+          console.log(data);
+          setProducts(data);
+        })
       .catch(error => console.error('Error fetching products:', error));
   }, []);
 
