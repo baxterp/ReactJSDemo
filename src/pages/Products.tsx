@@ -8,7 +8,7 @@ const Products: React.FC = () => {
   const itemsPerPage = 10;
 
   useEffect(() => {
-    fetch('/api')
+    fetch('https://api.baxterpearson.co.uk/api/products')
       .then(response => response.json())
       .then(data => 
         {

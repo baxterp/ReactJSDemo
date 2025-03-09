@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
-import { Home } from 'lucide-react';
+import { Home, ShoppingBag } from 'lucide-react';
 
 const Navigation: React.FC = () => {
   return (
@@ -15,7 +15,10 @@ const Navigation: React.FC = () => {
           <Nav className="me-auto">
             
             <NavDropdown title="Data Demo" id="shop-dropdown" className="me-3">
-              <NavDropdown.Item href="/products">Products</NavDropdown.Item>
+              <NavDropdown.Item href="/products">
+                <ShoppingBag className="me-2" size={20} />
+                Products
+              </NavDropdown.Item>
             </NavDropdown>
             
             <NavDropdown title="Help" id="help-dropdown">
